@@ -14,8 +14,11 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, unique = true)
     private String title;
+    @Column(nullable = false)
     private String genre;
+    @Column(nullable = false)
     private Double price;
     @ManyToOne
     @JoinColumn(name = "studio_id")
